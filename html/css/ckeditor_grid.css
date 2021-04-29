@@ -1,0 +1,234 @@
+@charset "UTF-8";
+.cke_editable .section:focus,
+.cke_editable .section:hover {
+  box-shadow: 0 0 5px 2px #9cddff;
+}
+
+.cke_editable .section .text-box {
+  outline: 2px solid transparent;
+}
+
+.cke_editable {
+  width: 100%;
+  margin: 100px auto 0;
+  padding: 10px;
+}
+.cke_editable * {
+  outline: none;
+}
+.cke_editable img {
+  width: 100%;
+  height: auto;
+}
+.cke_editable .section {
+  background: #F7F7F7;
+  position: relative;
+  color: #666;
+  margin: 80px auto;
+  transition: all 0.3s ease-in-out;
+  padding: 30px 10px;
+}
+.cke_editable .section * {
+  transition: all 0.3s ease-in-out;
+}
+.cke_editable .section .embeddedContent {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+.cke_editable .section .delete-btn {
+  right: 0px;
+}
+.cke_editable .section .arrow-btn {
+  display: flex;
+  align-items: center;
+  right: 55px;
+}
+.cke_editable .section .arrow-btn svg {
+  margin-right: 5px;
+}
+.cke_editable .section .delete-btn,
+.cke_editable .section .arrow-btn {
+  position: absolute;
+  font-size: 2rem;
+  color: #9B9B9B;
+  cursor: pointer;
+  top: -55px;
+}
+.cke_editable .section .delete-btn span:hover,
+.cke_editable .section .arrow-btn span:hover {
+  color: #dc3545;
+}
+.cke_editable .section .delete-btn span,
+.cke_editable .section .arrow-btn span {
+  transition: all 0.3s ease-in-out;
+}
+.cke_editable table {
+  width: 100%;
+}
+.cke_editable table thead th {
+  background-color: #2B478B;
+  color: #FFFFFF;
+}
+.cke_editable table tbody tr:nth-child(odd) td {
+  background-color: #F7F7F7;
+}
+.cke_editable table tbody tr:nth-child(even) td {
+  background-color: #EBF3FA;
+}
+.cke_editable table td, .cke_editable table th {
+  padding: 10px 15px;
+  border-bottom: 2px solid #FFFFFF;
+  border: 2px solid #FFFFFF;
+}
+@media (min-width: 1440px) {
+  .cke_editable table {
+    min-width: 800px;
+  }
+}
+@media (min-width: 992px) {
+  .cke_editable .blog-grid {
+    margin: 0;
+  }
+}
+.cke_editable .blog-grid.right-flow {
+  flex-direction: row-reverse;
+}
+@media (min-width: 992px) {
+  .cke_editable .blog-grid.row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.cke_editable .blog-grid .text-box {
+  text-align: justify;
+  position: relative;
+}
+@media (max-width: 991.98px) {
+  .cke_editable .blog-grid .text-box {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+.cke_editable .blog-grid p {
+  line-height: 1.8;
+  margin: 0;
+}
+.cke_editable .blog-grid img + span {
+  font-size: 0.9rem;
+}
+.cke_editable .blog-grid .title {
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+}
+.cke_editable .blog-grid .sub-title-p {
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+}
+@media (max-width: 767.98px) {
+  .cke_editable .blog-grid .sub-title-p {
+    margin: 0;
+  }
+}
+.cke_editable .blog-grid hr {
+  border-top: 1px solid #666;
+}
+.cke_editable .blog-grid .video-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+.cke_editable .blog-grid .video-wrap iframe,
+.cke_editable .blog-grid .video-wrap video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.cke_editable .blog-grid .video-wrap.ckeditor-html5-video {
+  padding: 0;
+}
+.cke_editable .blog-grid .video-wrap.ckeditor-html5-video video {
+  position: unset;
+}
+
+/* oembed套件影片 RWD設定 */
+.cke_widget_wrapper .cke_widget_element {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  overflow: hidden;
+}
+.cke_widget_wrapper .cke_widget_element .html5-video-container {
+  height: -webkit-fill-available;
+}
+
+.cke_widget_mask {
+  position: absolute;
+  z-index: 0;
+  height: 100% !important;
+  width: 100% !important;
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+  outline: 2px solid greenyellow;
+}
+
+.certificate-block {
+  padding: 50px 30px;
+  background: #f7f7f7;
+}
+.certificate-block .certificate {
+  color: #000;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.certificate-block .certificate .fix-text {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-decoration: underline;
+  color: #666;
+}
+.certificate-block .certificate .text {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.certificate-block .certificate .author-box {
+  margin-top: 150px;
+  margin-bottom: 200px;
+}
+.certificate-block .certificate .sign-box {
+  text-align: right;
+  letter-spacing: 3px;
+  margin-bottom: 150px;
+}
+.certificate-block .certificate .sign-box .association-name {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+.certificate-block .certificate .sign-box img {
+  max-width: 300px;
+  margin-left: auto;
+}
+.certificate-block .certificate .date {
+  letter-spacing: 3px;
+  width: 80%;
+  font-size: 1.3rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.certificate-block .certificate .date span {
+  min-width: 100px;
+  max-width: 120px;
+  text-align: right;
+  display: block;
+}
+.certificate-block .certificate .date span::after {
+  content: attr(data-title);
+  padding-left: 5px;
+}

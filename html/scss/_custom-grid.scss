@@ -1,0 +1,266 @@
+// .edit-block {
+//     * {
+//         margin: 0 auto;
+//     }
+// }
+
+
+
+.section {
+    position: relative;
+    color: $main-gray;
+    margin: 50px auto;
+
+    @include media-breakpoint-down(lg) {
+        margin: 30px auto;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin: 20px auto;
+    }
+
+    ///////////////上方控制鈕
+    .delete-btn,
+    .arrow-btn {
+        display: none;
+    }
+
+    ////////////////////
+
+    table {
+
+        width: 100%;
+        min-width: 800px;
+
+        thead th {
+            background-color: $dark-blue;
+            color: $white;
+        }
+
+        tbody {
+            tr:nth-child(odd) td {
+                background-color: #F7F7F7;
+            }
+
+            tr:nth-child(even) td {
+                background-color: #EBF3FA;
+            }
+        }
+
+        td,
+        th {
+            padding: 10px 15px;
+            border-bottom: 2px solid $white;
+            border: 2px solid $white;
+
+        }
+    }
+
+    .table-wrap {
+        @include media-breakpoint-down(md) {
+            overflow: auto;
+        }
+    }
+
+    ol li{
+        list-style-type: decimal;
+    }
+
+    ul li {
+        list-style-type: disc;
+    }
+
+    ol,
+    ul {
+        margin-left: 1rem;
+
+    }
+
+}
+
+//modal
+.modal-header {
+    border: none;
+
+    @include media-breakpoint-up(md) {
+        display: none;
+    }
+}
+
+
+
+
+
+
+.blog-grid {
+
+    &.slideThree p {
+        margin-top: 5px;
+    }
+
+
+
+    @include media-breakpoint-up(lg) {
+        margin: 0;
+
+        &.row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+    }
+
+    // 右圖
+    &.right-flow {
+        flex-direction: row-reverse;
+    }
+
+
+
+
+    .text-box {
+        text-align: justify;
+        position: relative;
+
+        @include media-breakpoint-down(lg) {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
+
+    .img-box {
+        overflow: hidden;
+    }
+
+
+    p {
+        line-height: 1.8;
+        margin: 0;
+    }
+
+    img + span{
+        font-size: .9rem;
+    }
+
+    a{
+        display: inline-block;
+    }
+
+    .title {
+        font-weight: 400;
+        font-size: 1.5rem;
+        padding-bottom: 10px;
+    }
+
+    .sub-title-p {
+        font-size: 1.2rem;
+        padding-bottom: 10px;
+
+
+        @include media-breakpoint-down(sm) {
+            margin: 0;
+        }
+    }
+
+
+    hr {
+        border-top: 1px solid #666;
+    }
+
+
+
+    // 影片RWD embed youtube
+    .video-wrap {
+        position: relative;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+
+        iframe,
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        &.ckeditor-html5-video {
+            padding: 0;
+
+            video {
+                position: unset;
+            }
+        }
+    }
+
+}
+
+.certificate-block {
+    padding: 50px 30px;
+    background: $lighten-gray;
+
+    .certificate {
+        color: $black;
+        text-align: center;
+        font-size: 1.2rem;
+
+        p {}
+
+        .fix-text {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-decoration: underline;
+            color: $main-gray;
+        }
+
+        .text {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        .author-box {
+            margin-top: 150px;
+            margin-bottom: 150px;
+        }
+
+        .sign-box {
+            text-align: right;
+            letter-spacing: 3px;
+            margin-bottom: 150px;
+
+            .association-name {
+                color: $main-gray;
+                font-size: 1rem;
+                margin-bottom: 5px;
+            }
+
+            img {
+                max-width: 300px;
+                margin-left: auto;
+            }
+
+        }
+
+        .date {
+            letter-spacing: 3px;
+            width: 80%;
+            font-size: 1.3rem;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            span {
+                min-width: 100px;
+                max-width: 120px;
+                text-align: right;
+                display: block;
+
+                &::after {
+                    content: attr(data-title);
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+}

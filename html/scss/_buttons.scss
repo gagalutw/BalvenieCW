@@ -1,0 +1,209 @@
+
+
+//*--------按鈕群
+
+.page-btn-wrap {
+    text-align: center;
+    margin: 30px auto;
+
+}
+
+
+.main-btn {
+    border-radius: 2rem;
+    padding: 0.6rem 2rem;
+    font-size: initial;
+    letter-spacing: 2px;
+    display: inline-block;
+    text-align: center;
+    min-width: 120px;
+    border: 1px solid $secondary-color;
+    @include transition-hover;
+
+    @include media-breakpoint-down(sm) {
+        font-size: .9rem;
+        min-width: auto;
+        padding: 0.5rem 1.5rem;
+        min-width: 100px;
+    
+    }
+ 
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+        outline: none
+    }
+
+    &:disabled {
+        @include theme-colors(disable);
+        cursor: default;
+
+    }
+
+    &[type="reset"] {
+        @include theme-colors(cancel);
+    }
+
+}
+
+
+/*--------右邊置頂按鈕--------*/
+.scrollToTop {
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    text-align: center;
+    color: $secondary-color;
+    position: fixed;
+    right: 20px;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    z-index: 300;
+    transform: scale(1, 1);
+    bottom: 00px;
+    background-color:rgba($color: $white, $alpha: 0.8);
+    border: 1px solid $secondary-color;
+    opacity: 0;
+    visibility: hidden;
+    @include transition-hover;
+    @extend %basic-shadow;
+
+    svg {
+        margin: 0;
+        margin-top: 12px;
+    }
+
+    &:hover {
+        text-decoration: none;
+        color: $secondary-color;
+        transform: scale(1.1, 1.1);
+        @include transition-hover;
+
+    }
+
+    &.scrollToTop.show {
+        bottom: 15vh;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/*--------右邊置頂按鈕 END--------*/
+
+
+
+
+
+//漢堡+關閉按鈕
+.menu-toggle {
+    display: none;
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: transparent;
+    position: relative;
+    padding: 0;
+    opacity: 1;
+
+    &:after{
+    content:"";
+    @include center;
+    width: 43px;
+    height: 45px;
+    background-color:#131e29;
+    z-index: -1;
+    border: 1px solid $secondary-color;
+    }
+    // transition: all .2s cubic-bezier(0.65, 0.05, 0.36, 1);
+
+
+    .line {
+        border-radius: 20px;
+        display: inline-block;
+        background: $secondary-color;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        transition: all .3s cubic-bezier(0.65, 0.05, 0.36, 1);
+        width: 100%;
+
+        &:first-child {
+            top: -1px;
+        }
+
+        &:nth-child(2) {
+            top: 8px;
+            width: 80%;
+        }
+
+        &:nth-child(3) {
+            top: 18px;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        &:hover {
+            .line {
+                background: $secondary-color;
+
+                &:nth-child(1),
+                &:nth-child(3) {
+                    width: 80%;
+                }
+
+                &:nth-child(2) {
+                    width: 120%;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+.toggle-close-btn {
+    top: 24px;
+    left: 15px;
+    margin: 0;
+    display: none;
+    z-index: 600;
+
+    .line {
+        background: $main-gray;
+
+        &:first-child {
+            transform: rotate(45deg);
+            top: 7px;
+
+        }
+
+        &:last-child {
+            transform: rotate(-45deg);
+            top: 7px;
+        }
+    }
+}
+
+
+.close-element,
+.cover-mask {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: -120%;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    opacity: .5;
+    visibility: hidden;
+    @include transition-cubic;
+}
+

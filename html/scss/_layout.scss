@@ -1,0 +1,645 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700&display=swap');
+// // font-family: 'Noto Sans TC', sans-serif;
+
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+// // font-family: 'Roboto', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;700;900&display=swap');
+
+// font-family: 'Cinzel', serif;
+// font-family: 'Noto Serif TC', serif;
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    outline: transparent;
+
+    &::selection {
+        background: $lighten-blue;
+    }
+}
+
+body {
+    font-family: 'Cinzel', 'Noto Serif TC', 'Noto Sans TC', sans-serif, Arial, "微軟正黑體", "Microsoft JhengHei";
+    position: relative;
+    overflow-x: hidden;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    background-color: $white;
+    color: $main-gray;
+
+    @include media-breakpoint-down(md) {
+        font-size: .9rem;
+    }
+
+}
+
+a {
+    color: $main-gray;
+    display: block;
+    text-decoration: none;
+    @include transition-hover;
+
+
+    &:hover {
+        text-decoration: none;
+        color: $secondary-color;
+    }
+}
+
+p {
+    margin: 0;
+
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.5;
+}
+
+
+storng {
+    display: block;
+    font-weight: 500;
+    margin: 10px auto;
+    font-size: 1.2rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    transition: transform 1.5s ease;
+    display: block;
+}
+
+.img-box {
+    overflow: hidden;
+}
+
+
+
+ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+        list-style-type: none;
+    }
+}
+
+
+.web-display {
+    @include web-display
+}
+
+.mob-display {
+    @include mob-display
+}
+
+//前台文字要斷行
+.white-space {
+    white-space: pre-wrap;
+
+}
+
+
+//*--------全站元件
+
+//*--------標題
+//主標
+
+
+.title {
+    // font-size: 30px;
+    letter-spacing: 3px;
+    @extend %text-shadow;
+    // font-weight: 500;
+}
+
+.title-box {
+    display: inline-block;
+    position: relative;
+
+    >*:not(span) {
+        color: $dark-blue;
+        padding: 10px;
+        letter-spacing: 2px;
+        line-height: 1.1;
+        font-weight: 400;
+        border: 1px solid $dark-blue;
+
+        &::after {
+            content: "";
+            z-index: -1;
+            border-radius: 100%;
+            display: block;
+            position: absolute;
+            background-color: $lighten-blue;
+            width: 70px;
+            height: 70px;
+            right: -20px;
+            bottom: -25px;
+            @extend %transition-easeout;
+
+        }
+
+
+        +* {
+            position: absolute;
+            left: 105%;
+            bottom: -10px;
+            font-style: italic;
+            font-weight: 700;
+            color: $secondary-color;
+            letter-spacing: -1px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+
+            &::after {
+                content: "";
+                position: absolute;
+                border-bottom: 1px solid $secondary-color;
+                width: calc(100% + 50px);
+                height: 0px;
+                right: 0;
+                bottom: 3px;
+                display: block;
+            }
+
+        }
+    }
+
+}
+
+.inner-text {
+    font-family: 'Noto Sans TC';
+    @extend %text-shadow;
+    font-size: 1.1rem;
+    font-weight: 300;
+
+}
+
+
+
+//h1~p降級 < 768px
+@include media-breakpoint-down(sm) {
+    @include create-heading-type-scale(major-second);
+}
+
+// 影片RWD embed youtube
+.video-wrap {
+    box-shadow: 0px 20px 5px 0px rgba(0, 0, 0, 0.5);
+    position: relative;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    @include video-shadow;
+
+    iframe,
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    &.ckeditor-html5-video {
+        padding: 0;
+
+        video {
+            position: unset;
+        }
+    }
+}
+
+
+
+.Mobile {
+    .content {
+        margin-top: 70px;
+
+    }
+}
+
+
+
+
+.fancybox-slide {
+    .img-box {
+        position: absolute;
+        top: 50%;
+        right: 25%;
+        transform: translate(50%, -50%);
+        z-index: 100;
+       animation-name: Opacity, Bottlemove;
+       animation-duration: 1.5s;
+        animation-delay: 1.5s;
+      animation-fill-mode: both;
+
+        img {
+            max-height: 80vh;
+            width: auto;
+        }
+    }
+
+    .fancybox-block {
+        display: none;
+        padding: 30px 30px 60px;
+        position: relative;
+
+        .img-box{
+            top: auto;
+            bottom: 0;
+            right: 25%;
+            transform: translate(50%, -50%);
+            z-index: 0;
+            animation-name: Opacity, Bottlemove;
+            img {
+                max-height: 500px;
+                width: auto;
+            }
+        }
+    
+        h4 {
+            padding-bottom: 10px;
+            border-bottom: 1px solid $secondary-color;
+            margin-bottom: 20px;
+        }
+    
+        h4,
+        h5 {
+            color: $secondary-color;
+        }
+    
+        ul li {
+            margin-bottom: 20px;
+    
+        }
+    
+        p a {
+            display: inline-block;
+        }
+    
+    }
+    
+}
+
+
+.text-wrap {
+    @include v-center;
+    left: 100px;
+    z-index: 30;
+    padding: 30px;
+    color: $white;
+    width: 400px;
+
+
+
+    &::after {
+        content: "";
+        @include v-center;
+        left: 0px;
+        width: 400px;
+        height: 400px;
+        background: url(../images/circle.png) no-repeat center / contain;
+        z-index: -1;
+    }
+}
+
+
+//BANNER
+.banner-block {
+    max-height: 100vh;
+
+    .slide-box {
+        overflow: hidden;
+        position: relative;
+        max-height: 90vh;
+    }
+
+
+    .slick-slide>div {
+        line-height: 0;
+    }
+
+
+    .slick-slide,
+    .slick-cloned {
+
+        picture,
+        img {
+            transform: scale(1);
+            transition: transform 5s ease-in-out 1s;
+
+        }
+
+        .title,
+        .inner-text {
+            line-height: 1.8;
+        }
+
+    }
+
+    .slick-active {
+
+        picture,
+        img {
+            transform: scale(1.1);
+        }
+
+        .title {
+            animation-name: Opacity, Titlemove;
+
+        }
+
+        .inner-text {
+            animation-name: Opacity, textmove;
+
+        }
+
+        .title,
+        .inner-text {
+            animation-duration: 1.5s;
+            animation-delay: 1.5s;
+            animation-fill-mode: both;
+        }
+
+        .text-wrap {
+            &::after {
+                animation-name: Opacity, Circlemove;
+                animation-duration: 2s;
+                animation-delay: 1s;
+                animation-fill-mode: both;
+            }
+        }
+    }
+
+
+}
+
+.content {
+    .section {
+        padding: 100px 0;
+    }
+}
+
+.video-block {
+
+    background: url(../images/video.jpg) no-repeat top center / cover;
+
+    .text-box {
+        text-align: center;
+        margin: 0 auto 100px;
+        color: $white;
+    }
+}
+
+
+.adcommerce-block {
+    position: relative;
+
+    .img-box {
+        position: relative;
+
+        &::before {
+            content: "";
+            background-color: $white;
+            @include center;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            opacity: .2;
+            transition: all 2s ease-in-out 1s;
+        }
+    }
+
+    .aos-animate .img-box {
+        opacity: 1;
+    }
+
+    .text-box {
+        @include v-center;
+        right: 20%;
+        left: auto;
+        z-index: 5;
+        text-align: right;
+
+    }
+    .text-wrap {
+        &::after {
+            left:auto;
+            right: 20%;
+            animation-name: Opacity, CirclemoveRight;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-fill-mode: both;
+        }
+    }
+}
+
+.product-block {
+    padding: 120px 0;
+    background: url(../images/product.jpg) no-repeat left top / cover;
+    position: relative;
+    overflow: hidden;
+    .grid-box {
+        .text-box {
+            color: $primary-color;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.1);
+            background: -webkit-gradient(linear, left top, right top, from($primary-color), to($primary-color), color-stop(0.9, $white));
+
+            background: gradient(linear, left top, right top, from($primary-color), to($primary-color), color-stop(0.5, $secondary-color));
+            -webkit-background-size: 125px 100%;
+            background-size: 125px 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-color: $primary-color;
+
+        }
+
+        .inner-text {
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        .img-box {
+            max-width: 350px;
+            margin: 20px auto;
+
+            img {
+                margin: 0 auto;
+                transition: filter .5s;
+                filter: drop-shadow(0 0 15px rgba(214, 181, 117, 0.5));
+            }
+
+            +p {
+                font-family: "Noto Sans TC";
+                font-weight: 300;
+                margin: -10px auto 30px;
+                padding: 15px;
+                background-color: rgba(255, 255, 255, .5);
+                max-width: 350px;
+                text-align: justify;
+                @extend %transition-cubic;
+            }
+            
+        }
+
+        a {
+            text-align: center;
+
+            .main-btn {
+                background-color: rgba(255, 255, 255, .2);
+            }
+
+            &:hover {
+                color: $primary-color;
+
+                .main-btn {
+                    background-color: $white;
+                }
+
+                .text-box {
+                    animation-name: shine;
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+
+                }
+
+                .img-box {
+                    // transform: translate3d(0, -5px, -2px);
+                    animation-name: move;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+
+                    img {
+                        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1));
+                    }
+
+                    +p {
+                        background-color: rgba(255, 255, 255, .8);
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+.alcohol-warning {
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    height: 10vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: $main-gray;
+    color: $secondary-color;
+    letter-spacing: 0.8vw;
+    font-size: 2.8rem;
+    padding: 20px;
+
+    img {
+        display: inline-block;
+        max-width: 50px;
+        margin: 0 50px
+    }
+
+
+}
+
+
+
+@include media-breakpoint-up(lg) {}
+
+@include media-breakpoint-down(md) {
+
+    .Mobile.is-mobile-mode {
+        overflow: hidden;
+    }
+
+    .video-block {
+        padding: 80px 0;
+    }
+
+    .product-block {
+        padding: 80px 0 20px;
+
+        .grid-box {
+            margin-bottom: 60px;
+        }
+
+    }
+
+    footer {
+        span {
+            display: block;
+        }
+    }
+
+    .alcohol-warning {
+        padding: 0;
+
+        p {
+            font-size: 1.1rem;
+        }
+
+
+        img {
+            margin: 0 10px;
+            max-width: 40px;
+        }
+    }
+
+    .text-wrap{
+        left: 0;
+        width: 200px;
+       
+        &:after{
+        width: 200px;
+        height: 200px;
+        }
+    }
+    .inner-text, .title{
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 1),
+        0px 0px 5px rgba(0, 0, 0, 1);
+    }
+    .title{
+        font-size: 1.2rem;
+    }
+    .inner-text{
+        font-size:.9rem;
+    }
+
+    .adcommerce-block{
+        .text-wrap{
+            width: 300px;
+            left: auto;
+            right: 0;
+            top: 40%;
+            &:after{
+               top: 40%;
+                right: 25%;
+                width: 300px;
+                height: 300px;
+                }
+        }
+    }
+
+}

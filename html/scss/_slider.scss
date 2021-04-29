@@ -1,0 +1,45 @@
+
+/*--------全站Slick--------*/
+.slick-wrap {
+    position: relative;
+    
+}
+.slick-prev, .slick-next{
+    color: $main-gray;
+    svg{
+        font-size: 1.2rem;
+    }
+    &:hover{
+    color: $light-gray;
+    }
+}
+
+.slick-prev:before, .slick-next:before {
+    @extend %fontAwe;
+    line-height: 1;
+    opacity: 1;
+}
+.slick-prev:before{
+    content: "\f053";
+}
+.slick-next:before{
+    content: "\f054";
+}
+.slick-next {
+    right: -12px;
+}
+.slick-prev {
+    left: -14px;
+}
+.slick-dots{
+    margin-bottom: 10px;
+    li.slick-active button:before{
+        color: $primary-color;
+    }
+    button{
+    transform: scale(.9);
+
+    }
+
+}
+/*--------全站Slick--------*/

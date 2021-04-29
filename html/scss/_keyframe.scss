@@ -1,0 +1,94 @@
+@keyframes move {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(0, -6px, -3px);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes shine {
+    0% {
+        background-position: top left;
+    }
+
+    100% {
+        background-position: top right;
+    }
+}
+
+
+
+@keyframes Opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes Titlemove {
+    0% {
+        transform: translateX(-30%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes textmove {
+    0% {
+        transform: translateX(30%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes Circlemove{
+
+    0% {
+        transform: translate(-100%, -50%) rotate(-180deg);
+    }
+
+    100% {
+        transform: translate(0%, -50%) rotate(0deg);
+    }
+}
+
+@keyframes CirclemoveRight{
+
+    0% {
+        transform: translate(200%, -50%) rotate(-180deg);
+    }
+
+    100% {
+        transform: translate(30%, -50%) rotate(0deg);
+    }
+}
+
+
+
+@keyframes Bottlemove {
+    0% {
+        transform: translate(300%,-50%);
+        top: 50%;
+    }
+
+    100% {
+        transform: translate(50%,-50%);
+        top: 50%;
+    }
+}
+
