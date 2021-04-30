@@ -55,6 +55,26 @@
         transform: translateX(0%);
     }
 }
+@keyframes TitlemoveM {
+    0% {
+        transform: translateX(30%);
+    }
+
+    100% {
+        transform: translateX(10%);
+    }
+}
+
+@keyframes textmoveM {
+    0% {
+        transform: translateX(30%);
+    }
+
+    100% {
+        transform: translateX(10%);
+    }
+}
+
 
 @keyframes Circlemove{
 
@@ -78,6 +98,28 @@
     }
 }
 
+@keyframes moveRight{
+
+    0% {
+        transform: translate(200%, 0%) ;
+    }
+
+    100% {
+        transform: translate(10%,0%);
+    }
+}
+
+
+@keyframes moveRightM{
+
+    0% {
+        transform: translate(200%, 0%) ;
+    }
+
+    100% {
+        transform: translate(-10%,0%);
+    }
+}
 
 
 @keyframes Bottlemove {

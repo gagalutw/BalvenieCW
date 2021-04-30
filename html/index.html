@@ -43,25 +43,25 @@
             <span class="line"></span>
             <span class="line"></span>
           </button>
-          <div class="main-nav">
+          <div class="main-nav" id="navSpy">
             <!-- nav關閉按鈕 -->
             <!-- <button class="menu-toggle toggle-close-btn" type="button" aria-hidden="true"><span class="line"></span>
               <span class="line"></span></button> -->
             <ul class="menu nav">
               <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0)">HOME</a>
+                <a class="nav-link nav-a" href="#HOME">HOME</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0)">用匠心訴說馥郁</a>
+                <a class="nav-link nav-a" href="#VIDEO">用匠心訴說馥郁</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0)">將美好推向未來</a>
+                <a class="nav-link nav-a" href="#CF">將美好推向未來</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0)">產品</a>
+                <a class="nav-link nav-a" href="#PRODUCTS">產品</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0)">購買通路</a>
+                <a class="nav-link nav-btn" href="#" data-fancybox data-src="#whereToBuy">購買通路</a>
               </li>
             </ul>
           </div>
@@ -72,10 +72,10 @@
     <!-- 內容開始 -->
     <div class="content">
       <!-- Banner -->
-      <div class="banner-block ">
+      <div class="banner-block" id="HOME">
         <div class="slide-box">
           <div class="text-box text-wrap">
-            <h2 class="title">以傳統編織大地的美好</h2>
+            <h2 class="title">以傳統編織<span>大地的美好</span></h2>
           </div>
           <div class="img-box">
             <picture>
@@ -87,7 +87,7 @@
         </div>
         <div class="slide-box">
           <div class="text-box text-wrap">
-            <h2 class="title">新意 匠心製造</h2>
+            <h2 class="title">新意 <span>匠心製造</span></h2>
             <p class="inner-text">從傳統學創造，用創作去挖掘、紀錄、保存老手藝</p>
           </div>
           <div class="img-box">
@@ -115,7 +115,7 @@
       </div>
       <!-- Banner END-->
       <!-- Video -->
-      <section class="video-block section" data-aos="fade-up" data-aos-duration="2500">
+      <section class="video-block section" data-aos="fade-up" data-aos-duration="2500" id="VIDEO">
         <div class="container">
           <div class="text-box">
             <h2 class="title" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1000">百般匠心 富而知竹</h2>
@@ -126,7 +126,7 @@
             <p class="inner-text" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1200">讓美好，從此刻，穿透到未來...
             </p>
           </div>
-          <div class="col-lg-8 mx-auto" data-aos="fade-up" data-aos-duration="2500" data-aos-delay="3000">
+          <div class="col-lg-8 mx-auto" data-aos="fade-up" data-aos-duration="2500" data-aos-delay="2500">
             <div class="video-wrap">
               <iframe class="resp-iframe" src="https://www.youtube.com/embed/Tmigy58dh-0" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -137,15 +137,15 @@
       </section>
       <!-- Video END -->
       <!-- CF -->
-      <section class="adcommerce-block" data-aos="fade-up" data-aos-duration="2500">
+      <section class="adcommerce-block" data-aos="fade-up" data-aos-duration="2500" id="CF">
         <div class="text-box text-wrap">
-          <h2 class="title" data-aos="fade-left" data-aos-duration="2000" data-aos-delay="500">百般匠心 富而知竹</h2>
-          <p class="inner-text" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="2000">在傳統裡找到跨越時空的脈絡
+            <h2 class="title">百般匠心 富而知竹</h2>
+          <p class="inner-text">在傳統裡找到跨越時空的脈絡
           </p>
-          <p class="inner-text" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="2500">拾起大地的元素，拆解再重組
+          <p class="inner-text">拾起大地的元素，拆解再重組
           </p>
-          <p class="inner-text" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="3000">將舊時的美好，推向未來的舞台</p>
-        </div>
+          <p class="inner-text">將舊時的美好，推向未來的舞台</p>
+         </div>
         <div class="img-box">
           <picture>
             <source srcset="images/CFm.jpg" media="(max-width: 599px)">
@@ -156,7 +156,7 @@
       </section>
       <!-- CF END -->
       <!-- Products -->
-      <section class="product-block" data-aos="fade-up" data-aos-duration="2500">
+      <section class="product-block" data-aos="fade-up" data-aos-duration="2500" id="PRODUCTS">
         <div class="container">
           <div class="row justify-content-between">
             <div class="grid-box col-md-5" data-aos="fade-up" data-aos-duration="2500" data-aos-delay="100">

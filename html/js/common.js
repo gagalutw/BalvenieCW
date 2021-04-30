@@ -17,7 +17,7 @@ $(function () {
     } else {
       $('.scrollToTop').removeClass('show');
     }
-  }).scroll();;
+  }).scroll();
 
   $('.scrollToTop').click(function () {
     $('html, body').animate({
@@ -33,6 +33,11 @@ $(window).on('load', function () {
     duration: 1200,
   })
 
+  $('body').scrollspy({
+    target: '#navSpy',
+    offset: 100
+  })
+
 });
 
 // 導覽列樣式
@@ -40,7 +45,6 @@ $(function () {
   //區塊動態效果
   var timer = null;
   $(window).resize(function () {
-
     width = $(window).width();
     window.clearTimeout(timer);
     timer = window.setTimeout(function () {
@@ -50,9 +54,28 @@ $(function () {
 
       } else {
         $("html").addClass("Mobile");
+        $('#Nav .nav-a').click(function () {
+          $('.header, .main-nav').removeClass(ClassNames$4.EXPANDED);
+          $("html").removeClass(ClassNames$4.ISMOBILE);
+        })
       }
     }, 500);
   }).trigger("resize");
+
+  // 導覽列不要讓網址掛上#id
+  $('#Nav .nav-a').click(function () {
+    if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location
+      .hostname === this.hostname) {
+      let target = $(this.hash);
+      target = target.length ? target : $('[name' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top - 70
+        }, 500);
+        return false;
+      }
+    }
+  });
 })
 
 
@@ -61,14 +84,11 @@ $(function () {
 
 //手機版導覽列控制
 function MobileNav() {
-  var iWinScroll = $(window).scrollTop();
-  var timer;
-
+   var timer = null;
   $(window).on("scroll", function () {
     window.clearTimeout(timer)
 
     timer = window.setTimeout(function () {
-      iWinScroll = $(window).scrollTop();
       width = $(window).width();
       if (width < 992) {
         if ($(window).scrollTop() > 20) {
@@ -82,11 +102,11 @@ function MobileNav() {
   })
 
 
+
   //手機導覽列展開
   $('.menu-toggle').on("click", function () {
     $('.header, .main-nav').toggleClass(ClassNames$4.EXPANDED);
     $("html").toggleClass(ClassNames$4.ISMOBILE);
-    $("body").scrollTop(iWinScroll);
   })
 }
 
@@ -114,16 +134,13 @@ $(function () {
     }
   })
 
-  $(".grid-box").on("click", function () {
+  $(".grid-box, .nav-btn").on("click", function () {
     width = $(window).width();
-    if(width>992){
+    if (width > 992) {
       $(".fancybox-block").before('<div class="img-box"><img src="images/bottle.png" alt=""></div>');
-      console.log("web")
 
-    }
-    else{
+    } else {
       $(".fancybox-block").append('<div class="img-box"><img src="images/bottle.png" alt=""></div>');
-      console.log("mobile")
     }
 
   })

@@ -122,60 +122,6 @@ ul {
     // font-weight: 500;
 }
 
-.title-box {
-    display: inline-block;
-    position: relative;
-
-    >*:not(span) {
-        color: $dark-blue;
-        padding: 10px;
-        letter-spacing: 2px;
-        line-height: 1.1;
-        font-weight: 400;
-        border: 1px solid $dark-blue;
-
-        &::after {
-            content: "";
-            z-index: -1;
-            border-radius: 100%;
-            display: block;
-            position: absolute;
-            background-color: $lighten-blue;
-            width: 70px;
-            height: 70px;
-            right: -20px;
-            bottom: -25px;
-            @extend %transition-easeout;
-
-        }
-
-
-        +* {
-            position: absolute;
-            left: 105%;
-            bottom: -10px;
-            font-style: italic;
-            font-weight: 700;
-            color: $secondary-color;
-            letter-spacing: -1px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-
-            &::after {
-                content: "";
-                position: absolute;
-                border-bottom: 1px solid $secondary-color;
-                width: calc(100% + 50px);
-                height: 0px;
-                right: 0;
-                bottom: 3px;
-                display: block;
-            }
-
-        }
-    }
-
-}
 
 .inner-text {
     font-family: 'Noto Sans TC';
@@ -426,9 +372,49 @@ ul {
         }
     }
 
-    .aos-animate .img-box {
-        opacity: 1;
+    &.aos-animate {
+        .img-box {
+            opacity: 1;
+        }
+        .text-wrap {
+            .title, .inner-text{
+                left:auto;
+                animation-name: Opacity, moveRight;
+                animation-fill-mode: both;
+            }
+            .title{
+                animation-duration: 2s;
+                animation-delay: 1.5s;
+               
+            }
+            .inner-text{
+                animation-duration: 2s;
+                &:nth-child(2){
+                animation-delay: 3s;
+                 }
+                 &:nth-child(3){
+                   
+                animation-delay: 3.5s;
+
+                 }
+                 &:nth-child(4){
+                    
+                animation-delay: 4s;
+                 }
+              }
+
+            &::after {
+                left:auto;
+                right: 20%;
+                animation-name: Opacity, CirclemoveRight;
+                animation-duration: 2s;
+                animation-delay: .5s;
+                animation-fill-mode: both;
+
+            }
+        }
     }
+   
 
     .text-box {
         @include v-center;
@@ -438,16 +424,7 @@ ul {
         text-align: right;
 
     }
-    .text-wrap {
-        &::after {
-            left:auto;
-            right: 20%;
-            animation-name: Opacity, CirclemoveRight;
-            animation-duration: 2s;
-            animation-delay: 1s;
-            animation-fill-mode: both;
-        }
-    }
+ 
 }
 
 .product-block {
@@ -572,26 +549,33 @@ ul {
 
 
 
-@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(lg) {
+    .adcommerce-block{
+        &.aos-animate .text-wrap .title, .inner-text{
+            left:auto;
+            margin-right: 30px;
+            animation-name: Opacity, moveRight;
+            animation-fill-mode: both;
+        }
+    }
+}
+@include media-breakpoint-down(lg){
+    .alcohol-warning {
+        padding: 0;
 
+        p {
+            font-size: 2rem;
+        }
+
+    }
+}
 @include media-breakpoint-down(md) {
 
     .Mobile.is-mobile-mode {
         overflow: hidden;
     }
 
-    .video-block {
-        padding: 80px 0;
-    }
 
-    .product-block {
-        padding: 80px 0 20px;
-
-        .grid-box {
-            margin-bottom: 60px;
-        }
-
-    }
 
     footer {
         span {
@@ -625,12 +609,53 @@ ul {
     .inner-text, .title{
         text-shadow: 0px 0px 5px rgba(0, 0, 0, 1),
         0px 0px 5px rgba(0, 0, 0, 1);
+        span{
+            display: block;
+        }
     }
     .title{
         font-size: 1.2rem;
+        
     }
     .inner-text{
         font-size:.9rem;
+       
+    }
+
+    .banner-block{
+        .text-wrap{
+            padding:10px;
+            width: 300px;
+        }
+        .title, .inner-text{
+            transform: translateX(10%);
+            // left:10%;
+        }
+        .slick-active {
+            .title {
+                animation-name: Opacity, TitlemoveM;
+    
+            }
+            .inner-text {
+                animation-name: Opacity, textmoveM;
+    
+            }
+        }
+    }
+        
+
+
+    .video-block {
+        padding: 80px 0;
+    }
+
+    .product-block {
+        padding: 80px 0 20px;
+
+        .grid-box {
+            margin-bottom: 60px;
+        }
+
     }
 
     .adcommerce-block{
@@ -646,7 +671,18 @@ ul {
                 height: 300px;
                 }
         }
+        &.aos-animate .text-wrap{
+            &::after {
+                right: 30%;
+            }
+            .title, .inner-text{
+            animation-name: Opacity, moveRightM;
+
+            }
+          
+        }
     }
+
 
     .fancybox-block {
         p span{
