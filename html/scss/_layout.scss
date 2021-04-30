@@ -250,20 +250,22 @@ ul {
     }
 
     .fancybox-block {
-        display: none;
+    
         padding: 30px 30px 60px;
         position: relative;
 
         .img-box{
             top: auto;
-            bottom: 0;
-            right: 25%;
-            transform: translate(50%, -50%);
+            bottom: -20px;
+            right: 10%;
+            transform: translateX(50%);
             z-index: 0;
-            animation-name: Opacity, Bottlemove;
+            height: 450px;
+            animation-name: Opacity, BottlemoveM;
             img {
-                max-height: 500px;
+                max-height: 450px;
                 width: auto;
+                opacity: 0.3;
             }
         }
     
@@ -289,6 +291,10 @@ ul {
     
     }
     
+}
+
+.fancybox-block{
+    display: none;
 }
 
 
@@ -640,6 +646,17 @@ ul {
                 height: 300px;
                 }
         }
+    }
+
+    .fancybox-block {
+        p span{
+            display: block;
+        }
+    }
+
+    .fancybox-button{
+        background-color: $secondary-color;
+        color: $main-gray;
     }
 
 }

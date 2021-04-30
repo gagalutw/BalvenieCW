@@ -92,3 +92,19 @@
     }
 }
 
+
+@keyframes BottlemoveM {
+    0% {
+        transform: translateX(200%);
+        // transform: translate(300%,10%);
+        bottom: -20px;
+    }
+
+    100% {
+        transform: translateX(20%);
+        // transform: translate(50%,10%);
+        bottom: -20px;
+    }
+}
+
+

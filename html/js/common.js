@@ -122,7 +122,7 @@ $(function () {
 
     }
     else{
-      $(".fancybox-block").prepend('<div class="img-box"><img src="images/bottle.png" alt=""></div>');
+      $(".fancybox-block").append('<div class="img-box"><img src="images/bottle.png" alt=""></div>');
       console.log("mobile")
     }
 
